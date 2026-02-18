@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/// gets values from the 'default-values.properties' file
+/// retrieves values from the 'default-values.properties' file
 public class DefaultValuesConfig {
     private static final Properties props = new Properties();
 
@@ -30,8 +30,6 @@ public class DefaultValuesConfig {
                         props.getProperty(key)));
     }
 
-    //public static final String BROWSER = get("browser");
-    //public static final String ENV = get("env");
     public static final boolean HEADLESS = Boolean.parseBoolean(get("headless"));
     public static final String VIDEODIR = get("videoDir");
     public static final String BASE_URL = get("baseUrl");

@@ -19,9 +19,11 @@ public class FailureScreenshotExtension implements AfterTestExecutionCallback {
     public void afterTestExecution(ExtensionContext extensionContext){
         boolean failed = extensionContext.getExecutionException().isPresent();
         if (failed && page != null) {
+            Allure.addAttachment("Current URL", page.url());
+
             byte[] png = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
-            String name = "Failed: "+extensionContext.getDisplayName();
-            Allure.addAttachment(name, "image/png", new ByteArrayInputStream(png).toString());
+            String name = "Failed-"+extensionContext.getDisplayName();
+            Allure.addAttachment(name, "image/png", new ByteArrayInputStream(png),".png");
         }
     }
 }
