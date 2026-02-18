@@ -20,6 +20,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+/// a fixture, gets options from the 'SystemPropertiesPlaywrightOptions'
+/// sets a screenshot extension using 'FailureScreenshotExtension' class
+/// sets logging using tracing
 @UsePlaywright(SystemPropertiesPlaywrightOptions.class)
 public abstract class BaseUiTest{
 

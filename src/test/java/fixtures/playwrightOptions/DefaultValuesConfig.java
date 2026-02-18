@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/// gets values from the 'default-values.properties' file
 public class DefaultValuesConfig {
     private static final Properties props = new Properties();
 

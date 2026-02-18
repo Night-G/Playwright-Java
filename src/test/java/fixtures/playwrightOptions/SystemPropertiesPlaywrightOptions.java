@@ -5,8 +5,8 @@ import com.microsoft.playwright.junit.Options;
 import com.microsoft.playwright.junit.OptionsFactory;
 
 import java.nio.file.Paths;
-import java.util.Locale;
 
+/// Sets options, such as 'headless', 'baseUrl'
 public class SystemPropertiesPlaywrightOptions implements OptionsFactory {
     private final String DEF_URL;
     private final String DEF_VIDEODIR;
