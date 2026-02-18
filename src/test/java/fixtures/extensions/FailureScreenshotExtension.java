@@ -1,4 +1,4 @@
-package fixtures;
+package fixtures.extensions;
 
 import com.microsoft.playwright.Page;
 import io.qameta.allure.Allure;

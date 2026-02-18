@@ -4,6 +4,8 @@ package fixtures;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Tracing;
 import com.microsoft.playwright.junit.UsePlaywright;
+import fixtures.extensions.FailureScreenshotExtension;
+import fixtures.playwrightOptions.SystemPropertiesPlaywrightOptions;
 import io.qameta.allure.Allure;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +20,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
-@UsePlaywright(PlaywrightOptions.class)
+@UsePlaywright(SystemPropertiesPlaywrightOptions.class)
 public abstract class BaseUiTest{
 
     private static final Logger log = LoggerFactory.getLogger(BaseUiTest.class);
