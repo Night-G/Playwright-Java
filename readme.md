@@ -26,8 +26,10 @@ It supports multiple execution methods: **local Maven**, **Jenkins CI**, **Docke
     ```bash
     mvn clean test
 - local docker (powershell 7):
+  > the `-v ${PWD}/target:/app/target` can  be added to the `docker run` command to save results from the run to the local `target` folder
     ```bash
   docker build -t playwright-temp . && docker run --rm playwright-temp; docker rmi playwright-temp
+ 
 - local docker (powershell 5.1):
     ```bash
     docker build -t playwright-temp . ; if ($?) { docker run --rm playwright-temp };  if ($?) {docker rmi playwright-temp}
