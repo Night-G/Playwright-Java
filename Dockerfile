@@ -44,4 +44,4 @@ ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 RUN mvn exec:java -e -Dexec.mainClass="com.microsoft.playwright.CLI" -Dexec.args="install chromium"
 
 # Run the test
-ENTRYPOINT ["mvn", "test", "-Dtest=SampleTest", "-Dheadless=true"]
+ENTRYPOINT ["mvn", "test", "-Dheadless=true"]
