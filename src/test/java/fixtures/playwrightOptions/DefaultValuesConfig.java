@@ -3,6 +3,9 @@ package fixtures.playwrightOptions;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.Set;
+
+import static Utils.ConsoleLogUtil.secureLog;
 
 /// retrieves values from the 'default-values.properties' file
 public class DefaultValuesConfig {
@@ -24,13 +27,21 @@ public class DefaultValuesConfig {
         }
     }
 
-    private static String get(String key) {
-        return System.getProperty(key,
-                System.getenv().getOrDefault(key.toUpperCase(),
-                        props.getProperty(key)));
+    /// Returns all keys
+    public static Set<String> getPropertyNames() {
+        return props.stringPropertyNames();
     }
 
-    public static final boolean HEADLESS = Boolean.parseBoolean(get("headless"));
-    public static final String VIDEODIR = get("videoDir");
-    public static final String BASE_URL = get("baseUrl");
+    public static String get(String key) {
+        return System.getProperty(key,
+                        System.getenv().getOrDefault(key.toUpperCase(),
+                                props.getProperty(key)
+                        )
+
+        );
+    }
+
+    public static String getWithLog(String key) {
+        return secureLog(key,get(key));
+    }
 }
