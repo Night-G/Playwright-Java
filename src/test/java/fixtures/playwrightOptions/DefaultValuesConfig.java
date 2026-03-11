@@ -17,7 +17,7 @@ public class DefaultValuesConfig {
                 .getResourceAsStream("default-values.properties")) {
 
             if (is == null) {
-                throw new RuntimeException("config.properties not found");
+                throw new RuntimeException("default-values.properties not found");
             }
 
             props.load(is);
